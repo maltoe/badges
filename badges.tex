@@ -1,0 +1,51 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{fullpage}
+\usepackage{csvtools}
+\usepackage{graphicx}
+
+% Customize here to adapt badge size.
+% Beware that larger badges may exceed printing limits.
+\newcommand{\badgewidth}{87mm}
+\newcommand{\badgeheight}{55mm}
+\setlength{\oddsidemargin}{-19mm}
+
+% Customize here for background image name & size.
+% Ideally, logo should cover the whole badge.
+\newcommand\imgcmd{\includegraphics[width=\badgewidth,height=\badgeheight]{logo}}
+
+\newsavebox\mysavebox
+\newenvironment{badge}
+{
+	\begin{lrbox}{\mysavebox}
+	\begin{minipage}[t][\badgeheight]{\badgewidth}
+}
+{
+	\end{minipage}
+	\end{lrbox}
+	\rlap{
+		\raisebox{-\badgeheight}{\imgcmd}
+	}
+	\usebox{\mysavebox}
+}
+
+\pagestyle{empty}
+\begin{document}
+
+\applyCSVfile{names.csv}{
+    \noindent
+        \fbox{
+			\begin{badge}
+
+				% Customize here for text layout.
+				\vspace{10mm}
+				\sffamily \centering
+				\fontsize{30}{36}\selectfont\insertName
+				\\
+				\vspace{4mm}
+				\LARGE\itshape\insertAffiliation
+
+			\end{badge}
+		}
+}
+
+\end{document}
