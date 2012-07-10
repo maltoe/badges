@@ -75,9 +75,9 @@
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1280"
-     inkscape:window-height="977"
-     inkscape:window-x="-3"
+     inkscape:window-width="1680"
+     inkscape:window-height="1003"
+     inkscape:window-x="-2"
      inkscape:window-y="-3"
      inkscape:window-maximized="1"
      fit-margin-top="0"
@@ -103,7 +103,7 @@
      id="layer1"
      transform="translate(-423.45312,-228.58308)">
     <rect
-       style="fill:#ffffff;stroke:none"
+       style="fill:#ffffff;stroke:#ff0000;stroke-opacity:1"
        id="rect3001"
        width="317.90268"
        height="193.89638"
