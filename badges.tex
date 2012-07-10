@@ -18,9 +18,8 @@
 \begin{document}
 \applyCSVfile{names.csv}{%
     \noindent\framebox[\badgewidth]{%
-        % Don't know why the badge is not contained in the framebox. This fixes it.
-        \hspace{1.6mm}
-        \rlap{\raisebox{-\badgeheight}{\imgcmd}}
+        % Don't know why the badge is not contained in the framebox. The hspace fixes it.
+        \rlap{\raisebox{-\badgeheight}{\hspace{1.6mm}\imgcmd}}
         \begin{minipage}[t][\badgeheight]{\badgewidth}
             % Customize here for text layout.
             \vspace{10mm}
