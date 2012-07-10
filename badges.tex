@@ -7,7 +7,8 @@
 % Beware that larger badges may exceed printing limits.
 \newcommand{\badgewidth}{87mm}
 \newcommand{\badgeheight}{55mm}
-\setlength{\oddsidemargin}{-19mm}
+\setlength{\oddsidemargin}{-15mm}
+\setlength{\fboxsep}{0mm}
 
 % Customize here for background image name & size.
 % Ideally, logo should cover the whole badge.
@@ -16,16 +17,16 @@
 \newsavebox\mysavebox
 \newenvironment{badge}
 {
-	\begin{lrbox}{\mysavebox}
-	\begin{minipage}[t][\badgeheight]{\badgewidth}
+    \begin{lrbox}{\mysavebox}
+    \begin{minipage}[t][\badgeheight]{\badgewidth}
 }
 {
-	\end{minipage}
-	\end{lrbox}
-	\rlap{
-		\raisebox{-\badgeheight}{\imgcmd}
-	}
-	\usebox{\mysavebox}
+    \end{minipage}
+    \end{lrbox}
+    \rlap{
+            \raisebox{-\badgeheight}{\imgcmd}
+    }
+    \usebox{\mysavebox}
 }
 
 \pagestyle{empty}
@@ -33,19 +34,20 @@
 
 \applyCSVfile{names.csv}{
     \noindent
-        \fbox{
-			\begin{badge}
+    \framebox[\badgewidth]{
+        \noindent
+        \begin{badge}
 
-				% Customize here for text layout.
-				\vspace{10mm}
-				\sffamily \centering 
-				\fontsize{30}{36}\selectfont\textbf{\insertName}
-				\\
-				\vspace{4mm}
-				\LARGE\itshape\insertAffiliation
+            % Customize here for text layout.
+            \vspace{10mm}
+            \sffamily \centering 
+            \fontsize{30}{36}\selectfont\textbf{\insertName}
+            \\
+            \vspace{4mm}
+            \LARGE\itshape\insertAffiliation
 
-			\end{badge}
-		}
+        \end{badge}
+    }
 }
 
 \end{document}
