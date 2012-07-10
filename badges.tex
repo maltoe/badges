@@ -2,6 +2,7 @@
 \usepackage{fullpage}
 \usepackage{csvtools}
 \usepackage{graphicx}
+\usepackage[utf8]{inputenc}
 
 % Customize here to adapt badge size.
 % Beware that larger badges may exceed printing limits.
@@ -12,6 +13,7 @@
 
 % Customize here for background image name & size.
 % Ideally, logo should cover the whole badge.
+% If you don't have a background image, simply declare \imgcmd empty.
 \newcommand\imgcmd{\includegraphics[width=\badgewidth,height=\badgeheight]{logo}}
 
 \pagestyle{empty}
@@ -21,9 +23,11 @@
         % Don't know why the badge is not contained in the framebox. The hspace fixes it.
         \rlap{\raisebox{-\badgeheight}{\hspace{1.6mm}\imgcmd}}
         \begin{minipage}[t][\badgeheight]{\badgewidth}
-            % Customize here for text layout.
-            \vspace{10mm}
+            % Customize here for text layout
+            \vspace{3mm}
             \sffamily \centering
+            \textbf{Conference X}
+            \\[2mm]
             \fontsize{30}{36}\selectfont\textbf{\insertName}
             \\
             \vspace{4mm}
