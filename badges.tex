@@ -14,40 +14,22 @@
 % Ideally, logo should cover the whole badge.
 \newcommand\imgcmd{\includegraphics[width=\badgewidth,height=\badgeheight]{logo}}
 
-\newsavebox\mysavebox
-\newenvironment{badge}
-{
-    \begin{lrbox}{\mysavebox}
-    \begin{minipage}[t][\badgeheight]{\badgewidth}
-}
-{
-    \end{minipage}
-    \end{lrbox}
-    \rlap{
-            \raisebox{-\badgeheight}{\imgcmd}
-    }
-    \usebox{\mysavebox}
-}
-
 \pagestyle{empty}
 \begin{document}
-
-\applyCSVfile{names.csv}{
-    \noindent
-    \framebox[\badgewidth]{
-        \noindent
-        \begin{badge}
-
+\applyCSVfile{names.csv}{%
+    \noindent\framebox[\badgewidth]{%
+        % Don't know why the badge is not contained in the framebox. This fixes it.
+        \hspace{1.6mm}
+        \rlap{\raisebox{-\badgeheight}{\imgcmd}}
+        \begin{minipage}[t][\badgeheight]{\badgewidth}
             % Customize here for text layout.
             \vspace{10mm}
-            \sffamily \centering 
+            \sffamily \centering
             \fontsize{30}{36}\selectfont\textbf{\insertName}
             \\
             \vspace{4mm}
             \LARGE\itshape\insertAffiliation
-
-        \end{badge}
+        \end{minipage}
     }
 }
-
 \end{document}
