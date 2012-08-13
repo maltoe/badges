@@ -1,0 +1,129 @@
+<html>
+<head>
+<title>Badges for Conference X</title>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+function update_badge() {
+	$(".name").html($("#edit_name").val());
+	$(".affiliation").html($("#edit_affiliation").val());
+}
+
+function clear_form() {
+	$("#edit_name").val("");
+	$("#edit_affiliation").val("");
+}
+</script>
+
+<style type="text/css">
+// Computer Modern webfont.
+@font-face {
+	font-family: "Computer Modern";
+	src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf');
+}
+@font-face {
+	font-family: "Computer Modern";
+	src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunsx.otf');
+	font-weight: bold;
+}
+@font-face {
+	font-family: "Computer Modern";
+	src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunsi.otf');
+	font-style: italic, oblique;
+}
+@font-face {
+	font-family: "Computer Modern";
+	src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunbxo.otf');
+	font-weight: bold;
+	font-style: italic, oblique;
+}
+
+// Styling.
+body {
+	margin: 15mm 15mm 15mm 15mm;
+	font-family: "Computer Modern", sans-serif;
+}
+
+.badge_container {
+	position: relative;
+}
+
+.badge {
+	width: 87mm;
+	height: 55mm;
+	border-style: solid;
+	border-width: 0.3mm;
+	border-color: black;
+	text-align: center;
+}
+
+.mirror {
+	position: absolute;
+	border-left-width: 0;
+	top: 0;
+	left: 87mm;
+}
+
+.conference {
+	font-size: 12pt;
+	font-weight: bold;
+	margin-top: 3mm;
+	margin-bottom: 5mm;
+}
+
+.name {
+	font-size: 20pt;
+	font-weight: bold;
+}
+
+.affiliation {
+	margin-top: 6mm;
+	font-size: 16pt;
+	font-style: italic;
+}
+
+.menu {
+	position: absolute;
+	margin-top: 1em;
+	padding: 0.4em;
+	background-color: #BBBBBB;
+	border-radius: 2px;
+	width: 20%;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.edit_field {
+	width: 100%;
+}
+</style>
+
+</head>
+<body>
+
+<div class="badge_container">
+	<div class="badge">
+		<div class="conference">Conference X</div>
+		<div class="name">(Name)</div>
+		<div class="affiliation">(Affiliation)</div>
+	</div>
+	<div class="badge mirror">
+		<div class="conference">Conference X</div>
+		<div class="name">(Name)</div>
+		<div class="affiliation">(Affiliation)</div>
+	</div>
+</div>
+
+<div class="menu">
+Name:
+<input class="edit_field" type="text" id="edit_name" />
+Affiliation:
+<input class="edit_field" type="text" id="edit_affiliation" />
+<input type="submit" value="Update" onclick="update_badge()" />
+<input type="submit" value="Clear" onclick="clear_form()" />
+<input type="submit" value="Print" onclick="window.print()" />
+</div>
+
+</body>
+</html>

@@ -1,3 +1,9 @@
+= HTML Template = 
+
+Just open the HTML file. Can only print a single badge, double sided.
+
+= Latex Template =
+
 LaTeX template for creating conference badges.
 
 1. Fill in the CSV file with your conference participants.
